@@ -1,0 +1,28 @@
+{
+  "name": "loldocs",
+  "version": "1.0.0",
+  "description": "Information regarding renowned MOBA game League of Legends",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yuehkchou/Frostimage.git"
+  },
+  "keywords": [
+    "LoL",
+    "League",
+    "of",
+    "Legends",
+    "MOBA",
+    "Game",
+    "esports"
+  ],
+  "author": "Yueh Chou",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yuehkchou/Frostimage/issues"
+  },
+  "homepage": "https://github.com/yuehkchou/Frostimage#readme"
+}
