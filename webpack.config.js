@@ -1,0 +1,27 @@
+import path from 'path';
+import webpack from 'webpack';
+
+const BUILD_DIR = path.resolve(__dirname, 'client/public');
+const APP_DIR = path.resolve(__dirname, 'client');
+
+const config = {
+  entry [
+    './client/index.js'
+  ],
+  output: {
+    path: BUILD_DIR,
+    filename: 'budle.js'
+  },
+  module: {
+    loaders: [
+      {
+        //Here we have configured it to process both .js and .jsx files using the regular expression.
+        test: /\.js$,
+        loaders: ['babel'],
+        include: path.join(__dirname, 'client')
+      }
+    ]
+  }
+};
+
+modefule.exports = config;
