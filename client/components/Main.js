@@ -1,6 +1,6 @@
 import React from 'react';
 import THREE from 'three';
-
+import Detector from 'Detector';
 // Declare Varibles
 const scene, camera, renderer, bulblight, container,
 character, bulbMat, ambientLight, object, loader, stats;
@@ -34,7 +34,7 @@ const params = {
   bulbPower: Object.keys( bulbLuminousPowers )[ 4 ],
   hemiIrradiance: Object.keys( hemiLuminousIrradiances )[0]
 }
-if(Detector.webgl) Dectector.addGetWebGLMessage();
+if( !Detector.webgl) Detector.addGetWebGLMessage();
 
 const SCREEN_WIDTH = window.innerWidth;
 const SCREEN__HEIGHT = window.innerHeight;
@@ -50,10 +50,32 @@ init();
 animate();
 
 const init = () => {
-  scene = new THREE.Scene();
-  camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window/innerHeight, 1, 10000 );
-  camera.position.z = 1000;
 
+  container = document.createElement('div');
+
+  // Scene
+  scene = new THREE.Scene();
+
+  // Camera
+  camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 1, 10000 );
+  camera.position.set( 0, 15, 400 );
+
+  // Lights
+
+  scene.add( new THREE.AmbientLight( 0x222222 ) );
+
+  let light = new THREE.Spot.Light( 0xffffff, 5, 1000 );
+  light.position.set( 200, 250, 500 );
+  light.angle = 0.5;
+  light.penumbra = 0.5;
+
+  light.castShadow = true;
+  light.shadow.mapSize.width = 1024;
+  light.shadow.mapSize.height = 1024;
+
+
+
+  // Geometry
   geometry = new THREE.BoxGeometry(200, 200, 200 );
   material = new THREE.MeshBasicMaterial( { color: 0xff0000, wireframe: true} );
 
@@ -63,13 +85,16 @@ const init = () => {
   renderer = new THREE.WebGLRenderer();
   renderer.setSize( window.innerWidth, window.innerHeight );
 
-  document.body.appendChild( renderer.domElement );
+  document.body.appendChild( container );
 
 }
 
 const animate = () => {
   requestAnimationFrame( animate );
 
+  render();
+
+  stats.update();
   mesh.rotation.x += 0.01;
   mesh.rotation.y += 0.02;
 

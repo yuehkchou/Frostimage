@@ -11,8 +11,8 @@ app.use(bodyParser.urlencoded({
   extended: true
 }));
 
-app.use(express.static(path.join(__dirname,'client/public')));
-app.use(express.static(path.join(__dirname, '/node_modules')));
+app.use('/public', express.static(path.join(__dirname, '/client/public')));
+app.use('/scripts', express.static(path.join(__dirname, '/node_modules')));
 app.get('*', function(req, res) {
   res.sendFile(path.join(__dirname, 'client/index.html'));
 });
