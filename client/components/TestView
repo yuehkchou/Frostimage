@@ -1,0 +1,99 @@
+import React from 'react';
+import THREE from 'three';
+import Detector from 'Detector';
+
+
+class TestView extends React.Component {
+  constructor( props ){
+    super( props );
+  }
+  this.state = {
+    data: []
+  }
+
+  // Scene
+
+  this.scene = new THREE.Scene();
+
+  // Camera
+
+  this.caemra = new THREE.PerspectiveCamera(75, 1, 1, 100);
+  this.camera.position.set( 0, 150, 400 );
+
+  // Renderer
+
+  this.renderer = new THREE.WebGLRenderer({
+    antialias: true
+  });
+
+  this.renderer.autoClear = false;
+  this.renderer.setClearColor(0x2d2d2d, 1);
+  this.renderer.domElement.style.width = '100%';
+  this.renderer.domElement.style.height = '100%';
+  this.geometry = new THREE.Geometry();
+  this.container.appendChild( renderer.domElement );
+  // Lights
+
+  let light = this.light = new THREE.SpotLight( 0xffffff, 5, 1000 );
+  light.position.set( 200, 250, 500 );
+  light.angle = 0.5;
+  light.penumbra = 0.5;
+
+  light.castShadow = true;
+
+  this.scene.add( light )
+
+  window.addEventListener( 'resize', onWindowResize, false );
+
+  this.controls = new THREE.OrbitControls( camera, renderer.domElement );
+  this.controls.target.set( 0, 50, 0);
+
+  // GUI
+
+  this.gui = new dat.GUI();
+
+  this.gui.add( playbackConfig, 'speed', 0, 2).onChange( () => {
+    character.setPlaybackRate( playbackConfig.speed );
+  } );
+
+  // Models
+
+  let config = {
+    baseUrl: '',
+
+    body: '',
+    skins: [],
+    weapons: [ [ '' ] ],
+      [ '', '' ]
+  };
+
+  this.character = new THREE.MD2Character();
+  this.character.scale = 3;
+
+  character.onLoadComplete = () => {
+    setupSkinsGUI( this.character );
+    setupWeaponsGUI( this.character );
+    setupGUIAnimations( this.character );
+  };
+
+  this.character.loadParts( config );
+  scene.add( this.character.root );
+
+  // GUI
+  onWindowResize( event ) => {
+    SCREEN_WIDTH = window.innerWidth;
+    SCREEN__HEIGHT = window.innerHeight;
+
+    this.renderer.setSize( SCREEN_WIDTH, SCREEN__HEIGHT );
+  }
+
+  // Render the scene
+  this.renderer.render( this.scene, this.camera );
+
+  render() {
+    return (
+
+    )
+  }
+}
+export default TestView;
