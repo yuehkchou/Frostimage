@@ -1,6 +1,6 @@
 import React from 'react';
 import THREE from 'three';
-import Detector from 'Detector';
+import Detector from '../public/dist/Detector';
 
 class MainView extends React.Component {
   constructor( props ) {
@@ -84,12 +84,6 @@ class MainView extends React.Component {
       light.shadow.mapSize.width = 1024;
       light.shadow.mapSize.height = 1024;
 
-      let light = new THREE.SpotLight( 0xffffff, 5, 1000 );
-
-      light.position.set( -100, 350, 350 );
-      light.angle = 0.5;
-      light.penumbra = 0.5;
-
       light.castShadow = true;
       light.shadow.mapSize.width = 1024;
       light.shadowmapSize.height = 1024;
@@ -150,8 +144,9 @@ class MainView extends React.Component {
     }
 
     return (
-
-    );
+      <div>
+      </div>
+    )
   }
 }
 
