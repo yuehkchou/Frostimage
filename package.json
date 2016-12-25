@@ -41,6 +41,7 @@
     "redux": "^3.6.0",
     "request": "^2.79.0",
     "three": "^0.83.0",
+    "three-orbit-controls": "^82.1.0",
     "webpack": "^1.14.0",
     "webpack-dev-middleware": "^1.8.4"
   },
