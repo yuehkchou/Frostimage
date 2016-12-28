@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import * as THREE from 'three';
-import OrbitControls from '../public/dist/OrbitControls';
+
+const OrbitControls = require('three-orbit-controls')(THREE);
 
 class TestView extends React.Component {
   constructor( props ){
@@ -9,7 +10,9 @@ class TestView extends React.Component {
     this.state = {
       data: []
     }
-
+    this.animate = this.animate.bind(this);
+    this.onWindowResize = this.onWindowResize.bind(this);
+    this.render = this.render.bind(this)
     this.playbackConfig ={
       speed: 1.0,
       wireframe: false
@@ -20,8 +23,8 @@ class TestView extends React.Component {
     document.body.appendChild( this.container )
 
     // Camera
-    this.camera = new THREE.PerspectiveCamera( 40, window.innerWidth / window.innerHeight, 1, 1000 );
-    console.log(this.camera)
+    this.camera = new THREE.PerspectiveCamera( 60, window.innerWidth / window.innerHeight, 1, 1000 );
+    // console.log(this.camera)
     this.camera.position.set( 0, 0, 5 );
     this.camera.lookAt( this.scene.position );
     this.scene.add( this.camera )
@@ -31,8 +34,8 @@ class TestView extends React.Component {
     this.renderer.setSize( 1024, 1024 );
     this.renderer.autoClear = false;
     this.renderer.setClearColor(0xEEEEEE);
-    this.renderer.domElement.style.width = '100%';
-    this.renderer.domElement.style.height = '100%';
+    this.renderer.domElement.style.width = '50%';
+    this.renderer.domElement.style.height = '50%';
     var cube = new THREE.BoxGeometry(100, 100, 100);
     var mesh = this.mesh = new THREE.Mesh( cube, new THREE.MeshBasicMaterial( { color: 0x0000ff, opacity: 0.5, transparent: true } ) );
     this.container.appendChild( this.renderer.domElement );
@@ -46,7 +49,7 @@ class TestView extends React.Component {
     // light.penumbra = 0.5;
 
     light.castShadow = true;
-    console.log('light', light);
+    // console.log('light', light);
     this.scene.add( light )
 
     // Controls
@@ -62,10 +65,10 @@ class TestView extends React.Component {
 
     this.geometry = new THREE.BoxGeometry( 2, 2, 2); // give the cube it's dimensions (width, height, depth)
   this.material = new THREE.MeshLambertMaterial( { color: 0xFF0000, wireframe: false} ); // creates this.material and gives it a color
-  var cube1 = this.cube1 = new THREE.Mesh( this.geometry, this.material ); // crates the cube using the this.geometry and the this.material
-  var cube2 = this.cube2 = new THREE.Mesh( this.geometry, this.material );
+  const cube1 = this.cube1 = new THREE.Mesh( this.geometry, this.material ); // crates the cube using the this.geometry and the this.material
+  const cube2 = this.cube2 = new THREE.Mesh( this.geometry, this.material );
       cube2.position.set(5, -2, -5);
-      var cube3 = this.cube3 = new THREE.Mesh( this.geometry, this.material );
+  const cube3 = this.cube3 = new THREE.Mesh( this.geometry, this.material );
       cube3.position.set(-5, -2, -5);
 
 this.scene.add( cube1, cube2, cube3); // adds the cube to the scene
@@ -93,44 +96,50 @@ this.scene.add( cube1, cube2, cube3); // adds the cube to the scene
     this.scene.add( mesh )
     console.log(this.scene)
     // Render the scene
-    this.renderer.render( this.scene, this.camera );
+    this.controls = new OrbitControls( this.camera);
+				this.controls.target.set( 0, 50, 0 );
+        this.controls.enableDamping = true;
+				this.controls.dampingFactor = 0.25;
+				this.controls.enableZoom = true;
+
+
   }
 
-  // componentWillMount() {
+  componentWillMount() {
+
   //   window.addEventListener( 'resize', this.onWindowResize.bind(this), false );
-  // }
+  }
   //
   componentDidMount() {
-    const controls = new OrbitControls(this.camera);
-    controls.rotateSpeed = 1.0;
-    controls.zoomSpeed = 1.2;
-    controls.panSpeed = 0.8;
-
-    controls.noZoom = false;
-    controls.noPan = false;
-
-    controls.staticMoving = true;
-    controls.dynamicDampingFactor = 0.3;
-
-    controls.addEventListener('change', () => {
-      this.setState({
-        mainCameraPosition: this.refs.mainCamera.position,
-      });
-    });
-
-    this.controls = controls;
+    this.animate()
+    // this.controls.addEventListener('change', () => {
+    //   this.setState({
+    //     cameraPosition: this.camera.position,
+    //   });
+    // });
+    window.addEventListener( 'resize', this.onWindowResize, false );
   }
-  // onWindowResize = ( event ) => {
-  //   SCREEN_WIDTH = window.innerWidth;
-  //   SCREEN__HEIGHT = window.innerHeight;
-  //
-  //   this.renderer.setSize( SCREEN_WIDTH, SCREEN__HEIGHT );
-  // }
+  onWindowResize = ( event ) => {
+    let SCREEN_WIDTH = window.innerWidth;
+    let SCREEN_HEIGHT = window.innerHeight;
 
+    this.renderer.setSize( SCREEN_WIDTH, SCREEN_HEIGHT );
+    this.camera.aspect = SCREEN_WIDTH / SCREEN_HEIGHT;
+		this.camera.updateProjectionMatrix();
+  }
+  animate () {
+    requestAnimationFrame( this.animate );
+				this.controls.update(); // required if controls.enableDamping = true, or if controls.autoRotate = true
+				 window.addEventListener('change', this.render.bind(this))
+				this.render();
+  }
   render() {
+    this.renderer.render(this.scene, this.camera)
+    // console.log(this.controls, 'controls')
+
     return (
       <div className ="test">
-      <script src="./public/dist/OrbitControls.js"></script>
+
       </div>
     );
   }

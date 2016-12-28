@@ -1,5 +1,7 @@
 import React from 'react';
 import { render } from 'react-dom';
+import * as THREE from 'three';
+import OrbitControls from './public/dist/OrbitControls'
 import Main from './components/Main';
 import TestView from './components/TestView';
 // import App from './components/App';
