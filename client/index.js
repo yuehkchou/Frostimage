@@ -12,8 +12,8 @@ class App extends React.Component {
   render(){
     return (
       <div>
-        <p> Hello REACT!! </p>
         <Header />
+        <p> Hello REACT!! </p>
         <TestView />
       </div>
     )

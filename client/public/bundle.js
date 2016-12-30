@@ -110,12 +110,12 @@
 	      return _react2.default.createElement(
 	        'div',
 	        null,
+	        _react2.default.createElement(_Header2.default, null),
 	        _react2.default.createElement(
 	          'p',
 	          null,
 	          ' Hello REACT!! '
 	        ),
-	        _react2.default.createElement(_Header2.default, null),
 	        _react2.default.createElement(_TestView2.default, null)
 	      );
 	    }
@@ -66176,9 +66176,9 @@
 	            var SCREEN_WIDTH = window.innerWidth;
 	            var SCREEN_HEIGHT = window.innerHeight;
 
-	            _this.renderer.setSize(SCREEN_WIDTH, SCREEN_HEIGHT);
 	            _this.camera.aspect = SCREEN_WIDTH / SCREEN_HEIGHT;
 	            _this.camera.updateProjectionMatrix();
+	            _this.renderer.setSize(SCREEN_WIDTH, SCREEN_HEIGHT);
 	        };
 
 	        _this.state = {
@@ -72310,8 +72310,23 @@
 	          _react2.default.createElement(_reactBootstrap.Navbar.Toggle, null)
 	        ),
 	        _react2.default.createElement(
-	          _reactBootstrap.Navbar.Collaspe,
+	          _reactBootstrap.Navbar.Collapse,
 	          null,
+	          _react2.default.createElement(
+	            _reactBootstrap.Navbar.Form,
+	            { pullLeft: true },
+	            _react2.default.createElement(
+	              _reactBootstrap.FormGroup,
+	              null,
+	              _react2.default.createElement(_reactBootstrap.FormControl, { type: 'text', placeholder: 'Search' })
+	            ),
+	            ' ',
+	            _react2.default.createElement(
+	              _reactBootstrap.Button,
+	              { type: 'submit' },
+	              'Submit'
+	            )
+	          ),
 	          _react2.default.createElement(
 	            _reactBootstrap.Nav,
 	            null,

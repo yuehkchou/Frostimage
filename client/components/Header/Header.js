@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { Nav, Navbar, NavItem, NavDropdown, Button, Glyphicon, MenuItem } from 'react-bootstrap';
+import { FormGroup, FormControl, Nav, Navbar, NavItem, NavDropdown, Button, Glyphicon, MenuItem } from 'react-bootstrap';
 
 class Header extends React.Component {
   constructor( props ) {
@@ -16,7 +16,14 @@ class Header extends React.Component {
           </Navbar.Brand>
           <Navbar.Toggle />
         </Navbar.Header>
-        <Navbar.Collaspe>
+        <Navbar.Collapse>
+          <Navbar.Form pullLeft>
+            <FormGroup>
+              <FormControl type="text" placeholder="Search" />
+            </FormGroup>
+            {' '}
+            <Button type="submit">Submit</Button>
+          </Navbar.Form>
           <Nav>
             <NavItem eventKey = { 1 } href="#">About</NavItem>
             <NavItem eventKey = { 2 } href="#">Link</NavItem>
@@ -29,13 +36,13 @@ class Header extends React.Component {
             <NavItem eventKey = { 1 } href="#">Login</NavItem>
             <NavItem eventKey = { 2 } href="#">Logout</NavItem>
           </Nav>
-          </Navbar.Collaspe>
+          </Navbar.Collapse>
         </Navbar>
     );
 
     return (
       <div>
-        {navBar}
+        { navBar }
       </div>
     )
   };

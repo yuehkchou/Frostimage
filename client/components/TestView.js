@@ -123,14 +123,14 @@ this.scene.add( cube1, cube2, cube3); // adds the cube to the scene
     let SCREEN_WIDTH = window.innerWidth;
     let SCREEN_HEIGHT = window.innerHeight;
 
-    this.renderer.setSize( SCREEN_WIDTH, SCREEN_HEIGHT );
     this.camera.aspect = SCREEN_WIDTH / SCREEN_HEIGHT;
 		this.camera.updateProjectionMatrix();
+    this.renderer.setSize( SCREEN_WIDTH, SCREEN_HEIGHT );
   }
   animate () {
     requestAnimationFrame( this.animate );
 				this.controls.update(); // required if controls.enableDamping = true, or if controls.autoRotate = true
-				 window.addEventListener('change', this.render.bind(this))
+				window.addEventListener('change', this.render.bind(this))
 				this.render();
   }
   render() {
