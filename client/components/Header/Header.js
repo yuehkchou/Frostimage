@@ -41,7 +41,7 @@ class Header extends React.Component {
     );
 
     return (
-      <div>
+      <div className="navBar">
         { navBar }
       </div>
     )

@@ -2,7 +2,7 @@ import React from 'react';
 import THREE from 'three';
 import Detector from '../public/dist/Detector';
 
-class MainView extends React.Component {
+class MainBU extends React.Component {
   constructor( props ) {
     super( props );
 
@@ -150,4 +150,4 @@ class MainView extends React.Component {
   }
 }
 
-export default MainView;
+export default MainBU;
