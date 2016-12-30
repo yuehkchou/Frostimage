@@ -5,7 +5,7 @@ import * as THREE from 'three';
 const OrbitControls = require('three-orbit-controls')(THREE);
 
 class TestView extends React.Component {
-  constructor( props ){
+  constructor( props ) {
     super( props );
     this.state = {
       data: []
@@ -63,7 +63,7 @@ class TestView extends React.Component {
       character.setPlaybackRate( this.playbackConfig.speed );
     } );
 
-    this.geometry = new THREE.BoxGeometry( 2, 2, 2); // give the cube it's dimensions (width, height, depth)
+  this.geometry = new THREE.BoxGeometry( 2, 2, 2); // give the cube it's dimensions (width, height, depth)
   this.material = new THREE.MeshLambertMaterial( { color: 0xFF0000, wireframe: false} ); // creates this.material and gives it a color
   const cube1 = this.cube1 = new THREE.Mesh( this.geometry, this.material ); // crates the cube using the this.geometry and the this.material
   const cube2 = this.cube2 = new THREE.Mesh( this.geometry, this.material );
@@ -96,19 +96,20 @@ this.scene.add( cube1, cube2, cube3); // adds the cube to the scene
     this.scene.add( mesh )
     console.log(this.scene)
     // Render the scene
-    this.controls = new OrbitControls( this.camera);
-				this.controls.target.set( 0, 50, 0 );
-        this.controls.enableDamping = true;
-				this.controls.dampingFactor = 0.25;
-				this.controls.enableZoom = true;
+    this.controls = new OrbitControls( this.camera, this.renderer.domElement );
+        // controls.addEventListener( 'change', render );
+				// this.controls.target.set( 0, 50, 0 );
+        // this.controls.enableDamping = true;
+				// this.controls.dampingFactor = 0.25;
+				// this.controls.enableZoom = true;
 
 
   }
 
-  componentWillMount() {
-
-  //   window.addEventListener( 'resize', this.onWindowResize.bind(this), false );
-  }
+  // componentWillMount() {
+  //
+  //  window.addEventListener( 'resize', this.onWindowResize.bind(this), false );
+  // }
   //
   componentDidMount() {
     this.animate()
@@ -130,7 +131,7 @@ this.scene.add( cube1, cube2, cube3); // adds the cube to the scene
   animate () {
     requestAnimationFrame( this.animate );
 				this.controls.update(); // required if controls.enableDamping = true, or if controls.autoRotate = true
-				window.addEventListener('change', this.render.bind(this))
+				// window.addEventListener('change', this.render.bind(this))
 				this.render();
   }
   render() {
@@ -138,7 +139,7 @@ this.scene.add( cube1, cube2, cube3); // adds the cube to the scene
     // console.log(this.controls, 'controls')
 
     return (
-      <div className ="test">
+      <div className="test">
 
       </div>
     );

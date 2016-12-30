@@ -69,7 +69,7 @@
 
 	var _OrbitControls2 = _interopRequireDefault(_OrbitControls);
 
-	var _Main = __webpack_require__(490);
+	var _Main = __webpack_require__(181);
 
 	var _Main2 = _interopRequireDefault(_Main);
 
@@ -116,7 +116,7 @@
 	          null,
 	          ' Hello REACT!! '
 	        ),
-	        _react2.default.createElement(_TestView2.default, null)
+	        _react2.default.createElement(_Main2.default, null)
 	      );
 	    }
 	  }]);
@@ -65826,7 +65826,65 @@
 	});
 
 /***/ },
-/* 181 */,
+/* 181 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactDom = __webpack_require__(33);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Main = function (_React$Component) {
+	  _inherits(Main, _React$Component);
+
+	  function Main(props) {
+	    _classCallCheck(this, Main);
+
+	    var _this = _possibleConstructorReturn(this, (Main.__proto__ || Object.getPrototypeOf(Main)).call(this, props));
+
+	    _this.state = {};
+	    return _this;
+	  }
+
+	  _createClass(Main, [{
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'div',
+	        { className: 'main' },
+	        _react2.default.createElement(
+	          'div',
+	          { style: { 'position': 'fixed', 'zIndex': -99, 'width': '100%', 'height': '30%' } },
+	          _react2.default.createElement('iframe', { frameBorder: "0", height: "100%", width: "100%", enablejsapi: '1',
+	            src: "https://youtube.com/embed/76cG7bcmmqM?autoplay=1&controls=0&showinfo=0&autohide=1" })
+	        )
+	      );
+	    }
+	  }]);
+
+	  return Main;
+	}(_react2.default.Component);
+
+	exports.default = Main;
+
+/***/ },
 /* 182 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -65968,24 +66026,25 @@
 	        _this.scene.add(mesh);
 	        console.log(_this.scene);
 	        // Render the scene
-	        _this.controls = new OrbitControls(_this.camera);
-	        _this.controls.target.set(0, 50, 0);
-	        _this.controls.enableDamping = true;
-	        _this.controls.dampingFactor = 0.25;
-	        _this.controls.enableZoom = true;
+	        _this.controls = new OrbitControls(_this.camera, _this.renderer.domElement);
+	        // controls.addEventListener( 'change', render );
+	        // this.controls.target.set( 0, 50, 0 );
+	        // this.controls.enableDamping = true;
+	        // this.controls.dampingFactor = 0.25;
+	        // this.controls.enableZoom = true;
+
 
 	        return _this;
 	    }
 
+	    // componentWillMount() {
+	    //
+	    //  window.addEventListener( 'resize', this.onWindowResize.bind(this), false );
+	    // }
+	    //
+
+
 	    _createClass(TestView, [{
-	        key: 'componentWillMount',
-	        value: function componentWillMount() {}
-
-	        //   window.addEventListener( 'resize', this.onWindowResize.bind(this), false );
-
-	        //
-
-	    }, {
 	        key: 'componentDidMount',
 	        value: function componentDidMount() {
 	            this.animate();
@@ -66001,7 +66060,7 @@
 	        value: function animate() {
 	            requestAnimationFrame(this.animate);
 	            this.controls.update(); // required if controls.enableDamping = true, or if controls.autoRotate = true
-	            window.addEventListener('change', this.render.bind(this));
+	            // window.addEventListener('change', this.render.bind(this))
 	            this.render();
 	        }
 	    }, {
@@ -90782,309 +90841,6 @@
 	  });
 	};
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
-
-/***/ },
-/* 490 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	      value: true
-	});
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _react = __webpack_require__(2);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _three = __webpack_require__(179);
-
-	var _three2 = _interopRequireDefault(_three);
-
-	var _Detector = __webpack_require__(491);
-
-	var _Detector2 = _interopRequireDefault(_Detector);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var MainView = function (_React$Component) {
-	      _inherits(MainView, _React$Component);
-
-	      function MainView(props) {
-	            _classCallCheck(this, MainView);
-
-	            var _this = _possibleConstructorReturn(this, (MainView.__proto__ || Object.getPrototypeOf(MainView)).call(this, props));
-
-	            _this.state = {
-	                  data: []
-	            };
-	            return _this;
-	      }
-
-	      _createClass(MainView, [{
-	            key: 'render',
-	            value: function (_render) {
-	                  function render() {
-	                        return _render.apply(this, arguments);
-	                  }
-
-	                  render.toString = function () {
-	                        return _render.toString();
-	                  };
-
-	                  return render;
-	            }(function () {
-
-	                  // Declare Varibles
-	                  var scene = void 0,
-	                      camera = void 0,
-	                      renderer = void 0,
-	                      bulblight = void 0,
-	                      container = void 0,
-	                      character = void 0,
-	                      bulbMat = void 0,
-	                      ambientLight = void 0,
-	                      object = void 0,
-	                      loader = void 0,
-	                      stats = void 0;
-	                  var ballMat = void 0,
-	                      cubeMat = void 0,
-	                      floorMat = void 0;
-	                  var geometry = void 0,
-	                      material = void 0,
-	                      mesh = void 0;
-
-	                  // Lumens Setting
-
-	                  var bulbLuminousPowers = {
-	                        '11000 lm': 110000,
-	                        '3500 lm': 3500,
-	                        '1700 lm': 1700,
-	                        '800 lm': 800,
-	                        '400 lm': 400,
-	                        '180 lm': 180,
-	                        '20 lm': 20,
-	                        'off': 0
-	                  };
-
-	                  var hemiLuminousIrradiances = {
-	                        '0.001 lx': 0.001,
-	                        '0.002 lx': 0.002,
-	                        '0.5 lx': 0.5,
-	                        '3.4 lx': 3.4
-	                  };
-
-	                  var params = {
-	                        shadows: true,
-	                        exposure: 0.68,
-	                        bulbPower: Object.keys(bulbLuminousPowers)[4],
-	                        hemiIrradiance: Object.keys(hemiLuminousIrradiances)[0]
-	                  };
-	                  if (!_Detector2.default.webgl) _Detector2.default.addGetWebGLMessage();
-
-	                  var SCREEN_WIDTH = window.innerWidth;
-	                  var SCREEN__HEIGHT = window.innerHeight;
-	                  var gui = void 0;
-	                  var playbackConfig = {
-	                        speed: 1.0,
-	                        wireframe: false
-	                  };
-
-	                  var clock = new _three2.default.Clock();
-
-	                  init();
-	                  animate();
-
-	                  var init = function init() {
-
-	                        container = document.createElement('div');
-
-	                        // Scene
-	                        scene = new _three2.default.Scene();
-
-	                        // Camera
-	                        camera = new _three2.default.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 10000);
-	                        camera.position.set(0, 15, 400);
-
-	                        // Lights
-
-	                        scene.add(new _three2.default.AmbientLight(0x222222));
-
-	                        var light = new _three2.default.Spot.Light(0xffffff, 5, 1000);
-	                        light.position.set(200, 250, 500);
-	                        light.angle = 0.5;
-	                        light.penumbra = 0.5;
-
-	                        light.castShadow = true;
-	                        light.shadow.mapSize.width = 1024;
-	                        light.shadow.mapSize.height = 1024;
-
-	                        light.castShadow = true;
-	                        light.shadow.mapSize.width = 1024;
-	                        light.shadowmapSize.height = 1024;
-
-	                        scene.add(light);
-
-	                        // Renderer
-
-	                        renderer = new _three2.default.WebGLRenderer({ antialias: true });
-	                        renderer.setClearColor(scene.fog.color);
-	                        renderer.sexPixelRation(window.devicePixelRatio);
-	                        renderer.setSize(SCREEN_WIDTH, SCREEN__HEIGHT);
-	                        container.appendChild(renderer.domElement);
-
-	                        renderer.gammaInput = true;
-	                        renderer.gammaOutput = true;
-	                        renderer.shadowMap.enabled = true;
-
-	                        // Events
-
-	                        window.addEventListener('resize', onWindowResize, false);
-
-	                        // Controls
-
-	                        controls = new _three2.default.OrbitControls(camera, renderer.domElement);
-	                        controls.target.set(0, 50, 0);
-
-	                        // Geometry
-	                        geometry = new _three2.default.BoxGeometry(200, 200, 200);
-	                        material = new _three2.default.MeshBasicMaterial({ color: 0xff0000, wireframe: true });
-
-	                        mesh = new _three2.default.Mesh(geometry, material);
-	                        scene.add(mesh);
-
-	                        // GUI
-
-	                        gui = new dat.GUI();
-
-	                        gui.add(playbackConfig, 'speed', 0, 2).onChange(function () {
-	                              character.setPlaybackRate(playbackConfig.speed);
-	                        });
-
-	                        gui.add(playbackConfig, 'wireframe', false).onChange(function () {
-	                              character.setWireframe(playbackConfig.wireframe);
-	                        });
-	                  };
-
-	                  var animate = function animate() {
-	                        requestAnimationFrame(animate);
-
-	                        render();
-
-	                        var delta = clock.getDelta();
-	                        stats.update();
-	                        character.update(delta);
-
-	                        renderer.render(scene, camera);
-	                  };
-
-	                  return _react2.default.createElement('div', null);
-	            })
-	      }]);
-
-	      return MainView;
-	}(_react2.default.Component);
-
-	exports.default = MainView;
-
-/***/ },
-/* 491 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/* WEBPACK VAR INJECTION */(function(module) {'use strict';
-
-	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
-
-	/**
-	 * @author alteredq / http://alteredqualia.com/
-	 * @author mr.doob / http://mrdoob.com/
-	 */
-
-	var Detector = {
-
-			canvas: !!window.CanvasRenderingContext2D,
-			webgl: function () {
-
-					try {
-
-							var canvas = document.createElement('canvas');return !!(window.WebGLRenderingContext && (canvas.getContext('webgl') || canvas.getContext('experimental-webgl')));
-					} catch (e) {
-
-							return false;
-					}
-			}(),
-			workers: !!window.Worker,
-			fileapi: window.File && window.FileReader && window.FileList && window.Blob,
-
-			getWebGLErrorMessage: function getWebGLErrorMessage() {
-
-					var element = document.createElement('div');
-					element.id = 'webgl-error-message';
-					element.style.fontFamily = 'monospace';
-					element.style.fontSize = '13px';
-					element.style.fontWeight = 'normal';
-					element.style.textAlign = 'center';
-					element.style.background = '#fff';
-					element.style.color = '#000';
-					element.style.padding = '1.5em';
-					element.style.width = '400px';
-					element.style.margin = '5em auto 0';
-
-					if (!this.webgl) {
-
-							element.innerHTML = window.WebGLRenderingContext ? ['Your graphics card does not seem to support <a href="http://khronos.org/webgl/wiki/Getting_a_WebGL_Implementation" style="color:#000">WebGL</a>.<br />', 'Find out how to get it <a href="http://get.webgl.org/" style="color:#000">here</a>.'].join('\n') : ['Your browser does not seem to support <a href="http://khronos.org/webgl/wiki/Getting_a_WebGL_Implementation" style="color:#000">WebGL</a>.<br/>', 'Find out how to get it <a href="http://get.webgl.org/" style="color:#000">here</a>.'].join('\n');
-					}
-
-					return element;
-			},
-
-			addGetWebGLMessage: function addGetWebGLMessage(parameters) {
-
-					var parent, id, element;
-
-					parameters = parameters || {};
-
-					parent = parameters.parent !== undefined ? parameters.parent : document.body;
-					id = parameters.id !== undefined ? parameters.id : 'oldie';
-
-					element = Detector.getWebGLErrorMessage();
-					element.id = id;
-
-					parent.appendChild(element);
-			}
-
-	};
-
-	// browserify support
-	if (( false ? 'undefined' : _typeof(module)) === 'object') {
-
-			module.exports = Detector;
-	}
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(492)(module)))
-
-/***/ },
-/* 492 */
-/***/ function(module, exports) {
-
-	module.exports = function(module) {
-		if(!module.webpackPolyfill) {
-			module.deprecate = function() {};
-			module.paths = [];
-			// module.parent = undefined by default
-			module.children = [];
-			module.webpackPolyfill = 1;
-		}
-		return module;
-	}
-
 
 /***/ }
 /******/ ]);
