@@ -15,6 +15,10 @@ app.use(bodyParser.urlencoded({
 app.use('/public', express.static(path.join(__dirname, '/client/public')));
 app.use('/scripts', express.static(path.join(__dirname, '/node_modules')));
 
+app.get('/styles/style.css', function(req, res) {
+  res.sendFile(path.join(__dirname, 'client/styles/style.css'));
+});
+
 app.get('*', function(req, res) {
   res.sendFile(path.join(__dirname, 'client/index.html'));
 });
