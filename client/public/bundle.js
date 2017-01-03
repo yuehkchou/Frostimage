@@ -65869,11 +65869,13 @@
 	      return _react2.default.createElement(
 	        'div',
 	        { className: 'main' },
+	        _react2.default.createElement('iframe', { className: 'ytplayer', id: 'ytplayer',
+	          src: 'https://www.youtube.com/v/76cG7bcmmqM?autoplay=1&controls=0&showinfo=0&autohide=1',
+	          frameBorder: '0', allowFullScreen: true }),
 	        _react2.default.createElement(
 	          'div',
-	          { style: { 'position': 'fixed', 'zIndex': -99, 'width': '100%', 'height': '30%' } },
-	          _react2.default.createElement('iframe', { frameBorder: "0", height: "100%", width: "100%", enablejsapi: '1',
-	            src: "https://youtube.com/embed/76cG7bcmmqM?autoplay=1&controls=0&showinfo=0&autohide=1" })
+	          { id: 'word' },
+	          'HELLO'
 	        )
 	      );
 	    }
