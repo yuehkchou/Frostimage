@@ -3,3 +3,4 @@
 dist
 node_modules
 ./web/config.js
+./client/components/assets/LOLBanner
