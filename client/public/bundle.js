@@ -65854,10 +65854,10 @@
 	var Main = function (_React$Component) {
 	  _inherits(Main, _React$Component);
 
-	  function Main(props) {
+	  function Main() {
 	    _classCallCheck(this, Main);
 
-	    var _this = _possibleConstructorReturn(this, (Main.__proto__ || Object.getPrototypeOf(Main)).call(this, props));
+	    var _this = _possibleConstructorReturn(this, (Main.__proto__ || Object.getPrototypeOf(Main)).call(this));
 
 	    _this.state = {};
 	    return _this;
@@ -65868,10 +65868,13 @@
 	    value: function render() {
 	      return _react2.default.createElement(
 	        'div',
-	        { className: 'main' },
-	        _react2.default.createElement('iframe', { className: 'ytplayer', id: 'ytplayer',
-	          src: 'https://www.youtube.com/v/76cG7bcmmqM?autoplay=1&controls=0&showinfo=0&autohide=1',
-	          frameBorder: '0', allowFullScreen: true }),
+	        null,
+	        _react2.default.createElement('img', { src: 'assets/Banner.jpg' }),
+	        _react2.default.createElement(
+	          'video',
+	          { poster: 'assets/Banner', type: 'image/jpg', id: 'backgroundvid', autoPlay: true, loop: true },
+	          _react2.default.createElement('source', { src: 'assets/LOLBanner', type: 'video/mp4' })
+	        ),
 	        _react2.default.createElement(
 	          'div',
 	          { id: 'word' },
@@ -67228,7 +67231,7 @@
 
 	      return _react2.default.createElement(
 	        'div',
-	        null,
+	        { className: 'navBar' },
 	        navBar
 	      );
 	    }

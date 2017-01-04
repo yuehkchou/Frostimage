@@ -25,6 +25,11 @@ const config = {
         test: /\.css?$/,
         include: path.join(__dirname, 'client'),
         loaders:['css']
+      },
+      {
+        // Images & Videos
+        test: /\.(png|jpg)$/,
+        loader: 'url-loader?limit=8192'
       }
     ]
   }
