@@ -28,8 +28,8 @@ const config = {
       },
       {
         // Images & Videos
-        test: /\.(png|jpg)$/,
-        loader: 'url-loader?limit=8192'
+        test: /\.(jpg|mp4)$/,
+        loader: 'file-loader?limit=8192'
       }
     ]
   }

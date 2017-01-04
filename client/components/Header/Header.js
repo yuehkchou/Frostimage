@@ -18,7 +18,7 @@ class Header extends React.Component {
         </Navbar.Header>
         <Navbar.Collapse>
           <Navbar.Form pullLeft>
-            <FormGroup>
+            <FormGroup id="searchBar">
               <FormControl type="text" placeholder="Search" />
             </FormGroup>
             {' '}

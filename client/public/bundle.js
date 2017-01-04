@@ -67174,7 +67174,7 @@
 	            { pullLeft: true },
 	            _react2.default.createElement(
 	              _reactBootstrap.FormGroup,
-	              null,
+	              { id: 'searchBar' },
 	              _react2.default.createElement(_reactBootstrap.FormControl, { type: 'text', placeholder: 'Search' })
 	            ),
 	            ' ',
