@@ -10,7 +10,8 @@ const config = {
   ],
   output: {
     path: BUILD_DIR,
-    filename: 'bundle.js'
+    filename: 'bundle.js',
+    publicPath: PATHS.build
   },
   module: {
     loaders: [
@@ -29,7 +30,7 @@ const config = {
       {
         // Images & Videos
         test: /\.(jpg|mp4)$/,
-        loader: 'file-loader?limit=8192'
+        loader: 'file-loader?name=assets/[name].[ext]'
       }
     ]
   }
