@@ -3,4 +3,5 @@
 dist
 node_modules
 ./web/config.js
+./components/assets/LOLBanner.mp4
 *.mp4
