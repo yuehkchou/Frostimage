@@ -9,14 +9,14 @@ class Header extends React.Component {
 
   render() {
     const navBar = (
-      <Navbar inverse collapseOnSelect>
-        <Navbar.Header>
+      <Navbar inverse collapseOnSelect id ="mainNav" className="navbar navbar-default navbar-fixed-top">
+        <Navbar.Header className="header-header">
           <Navbar.Brand>
             <a href="#">DotLeague</a>
           </Navbar.Brand>
           <Navbar.Toggle />
         </Navbar.Header>
-        <Navbar.Collapse>
+        <Navbar.Collapse className="collapse navbar-collapse">
           <Navbar.Form pullLeft>
             <FormGroup id="searchBar">
               <FormControl type="text" placeholder="Search" />

@@ -10,8 +10,7 @@ const config = {
   ],
   output: {
     path: BUILD_DIR,
-    filename: 'bundle.js',
-    publicPath: PATHS.build
+    filename: 'bundle.js'
   },
   module: {
     loaders: [
@@ -28,9 +27,14 @@ const config = {
         loaders:['css']
       },
       {
-        // Images & Videos
-        test: /\.(jpg|mp4)$/,
-        loader: 'file-loader?name=assets/[name].[ext]'
+        // Images
+        test: /\.(jpg|png)$/,
+        loader: 'url-loader?name=assets/[name].[ext]'
+      },
+      {
+        // Videos
+        test: /\.mp4$/,
+        loader: 'url-loader?limit=100000'
       }
     ]
   }
