@@ -111,12 +111,12 @@
 	        'div',
 	        null,
 	        _react2.default.createElement(_Header2.default, null),
+	        _react2.default.createElement(_Main2.default, null),
 	        _react2.default.createElement(
 	          'p',
 	          null,
 	          ' Hello REACT!! '
-	        ),
-	        _react2.default.createElement(_Main2.default, null)
+	        )
 	      );
 	    }
 	  }]);
