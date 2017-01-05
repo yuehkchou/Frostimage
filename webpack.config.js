@@ -27,9 +27,14 @@ const config = {
         loaders:['css']
       },
       {
-        // Images & Videos
-        test: /\.(png|jpg)$/,
-        loader: 'url-loader?limit=8192'
+        // Images
+        test: /\.(jpg|png)$/,
+        loader: 'url-loader?name=assets/[name].[ext]'
+      },
+      {
+        // Videos
+        test: /\.mp4$/,
+        loader: 'url-loader?limit=100000'
       }
     ]
   }
