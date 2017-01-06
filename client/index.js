@@ -13,8 +13,8 @@ class App extends React.Component {
     return (
       <div>
         <Header />
-        <p> Hello REACT!! </p>
         <Main />
+        <p> Hello REACT!! </p>
       </div>
     )
   }
