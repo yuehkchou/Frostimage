@@ -4,6 +4,18 @@
     border: 3px solid green;
     /*padding: 10px;*/
 }
+.vidBanner {
+  margin: auto;
+  position: relative;
+  overflow: auto;
+  /*right: 0;*/
+  top:70px;
+  /*bottom: 0;*/
+
+}
+.playerSearch {
+  margin: 10px;
+}
 #container-center {
   background-color: rgb( 34, 34, 34 )
 }
@@ -13,25 +25,26 @@
 #vidPlayer {
 
 }
-
+header #backgroundvid-overlay {
+  margin:auto;
+  position: absolute;
+  display: inline;
+  width: 100%;
+  height: 100%;
+  /*top:70px;*/
+  max-height: 725px;
+  max-width: 75%;
+  /*border: 5px solid green;*/
+  background-color: rgba(0, 0, 0, 0.35);
+  z-index: 200;
+}
 header #backgroundvid {
-  /*text-align: center;*/
-  background-color: rgba(0, 0, 0, 0.7);
-  position: relative;
-  overflow: auto;
-  /*right: 0;*/
-  top:70px;
-  /*bottom: 0;*/
   min-width: 20%;
   min-height: 20%;
   width: 75%;
   height: auto;
-  /*z-index: -99;*/
+  z-index: -99;
 }
-/*.vidBanner {
-  position: fixed;
-  align-self: center;
-}*/
 header {
   position: relative;
   width: 100%;
@@ -49,11 +62,16 @@ header .header-content {
   padding: 100px 15px 100px;
   width: 100%;
 }
+body {
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
 hr {
   border-color: rgb(250, 250, 250);
   border-width: 3px;
   max-width: 50px;
 }
+
 section {
   width: 75%;
   margin: auto;

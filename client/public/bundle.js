@@ -65905,12 +65905,18 @@
 	                  null,
 	                  ' Your Own Training Experience '
 	                ),
-	                _react2.default.createElement('input', { className: 'playerSearch', placeholder: 'Summoner Name...' })
+	                _react2.default.createElement('input', { className: 'playerSearch', placeholder: 'Summoner Name...' }),
+	                _react2.default.createElement(
+	                  'a',
+	                  { href: '#search', className: 'btn btn-primary btn-xl page-scroll' },
+	                  'Search'
+	                )
 	              )
 	            ),
 	            _react2.default.createElement(
 	              'div',
 	              { className: 'vidBanner', id: 'vidPlayer' },
+	              _react2.default.createElement('div', { id: 'backgroundvid-overlay' }),
 	              _react2.default.createElement(
 	                'video',
 	                { controls: true, poster: _Banner2.default, id: 'backgroundvid', autoPlay: true, loop: true, muted: true },

@@ -24,9 +24,12 @@ class Main extends React.Component {
                 <hr />
                 <p> Your Own Training Experience </p>
                 <input className="playerSearch" placeholder="Summoner Name..."></input>
+                <a href="#search" className="btn btn-primary btn-xl page-scroll">Search</a>
               </div>
             </div>
             <div className="vidBanner" id="vidPlayer">
+              <div id="backgroundvid-overlay">
+              </div>
               <video controls poster={banner} id="backgroundvid" autoPlay loop muted>
                 <source src="../../public/e72303f4d1abf6f055af6940e54e5e34.mp4" />
               </video>
