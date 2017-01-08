@@ -27,10 +27,14 @@ class Header extends React.Component {
           <Nav>
             <NavItem eventKey = { 1 } href="#">About</NavItem>
             <NavItem eventKey = { 2 } href="#">Link</NavItem>
-            <NavDropdown eventKey = { 3 } title="Dropdown" id="basic-nav-dropdown">
+            <NavDropdown eventKey = { 3 } title="Champions" id="basic-nav-dropdown">
               <MenuItem eventKey = { 3.1 }>Action</MenuItem>
               <MenuItem eventKey = { 3.2 }>Action 2</MenuItem>
+              <MenuItem eventKey = { 3.3 }>Action 2</MenuItem>
+              <MenuItem eventKey = { 3.4 }>Action 2</MenuItem>
+              <MenuItem eventKey = { 3.5 }>Action 2</MenuItem>
             </NavDropdown>
+            <NavItem eventKey = { 4 } href="#">Stream</NavItem>
           </Nav>
           <Nav pullRight>
             <NavItem eventKey = { 1 } href="#">Login</NavItem>

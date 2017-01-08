@@ -34,7 +34,7 @@ const config = {
       {
         // Videos
         test: /\.mp4$/,
-        loader: 'url-loader?limit=100000'
+        loader: 'url?limit=10000&mimetype=video/mp4'
       }
     ]
   }

@@ -1,21 +1,37 @@
-#video-background {
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
+.center {
+    margin: auto;
+    width: 50%;
+    border: 3px solid green;
+    /*padding: 10px;*/
+}
+#container-center {
+  background-color: rgb( 34, 34, 34 )
+}
+#guide {
+  background-color: rgb(20, 20, 20 );
+}
+#vidPlayer {
+
+}
+
+header #backgroundvid {
+  /*text-align: center;*/
+  background-color: rgba(0, 0, 0, 0.7);
+  position: relative;
+  overflow: auto;
+  /*right: 0;*/
+  top:70px;
+  /*bottom: 0;*/
+  min-width: 20%;
+  min-height: 20%;
+  width: 75%;
   height: auto;
-  z-index: -99;
+  /*z-index: -99;*/
 }
-
-#word {
-  font-size: 200px;
-}
-.mainInfo {
-  background-color: white;
-}
-
+/*.vidBanner {
+  position: fixed;
+  align-self: center;
+}*/
 header {
   position: relative;
   width: 100%;
@@ -27,23 +43,55 @@ header {
   text-align: center;
   color: white;
 }
-
 header .header-content {
-  position: relative;
+  position: absolute;
   text-align: center;
   padding: 100px 15px 100px;
   width: 100%;
 }
+hr {
+  border-color: rgb(250, 250, 250);
+  border-width: 3px;
+  max-width: 50px;
+}
+section {
+  width: 75%;
+  margin: auto;
+  padding: 150px;
+}
 
+p {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.icon-box {
+  max-width: 460px;
+  margin: 50px auto 0;
+}
+.main {
+  width:100%;
+  /*background-image: url("/public/assets/Banner.jpg");*/
+}
 /* Animated Nav Bar */
 .navbar-default {
   background-color: white;
   font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
-  -webkit-transition: all 0.3s;
-  -moz-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  transition: all 0.4s ease;
 }
-
+.navbar-default .navbar-header .navbar-brand {
+  color: rgb( 64, 181, 239 );
+  font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;;
+}
+.navbar-default .navbar-header .navbar-brand:hover,
+.navbar-default .navbar-header .navbar-brand:focus {
+  color: #eb3812;
+}
 .navbar-default .navbar-header .navbar-toggle {
   font-weight: 700;
   font-size: 12px;
@@ -68,7 +116,8 @@ header .header-content {
   .navbar-default {
     background-color: transparent;
     border-color: rgba( 255, 255, 255, 0.3 );
-    min-height: 60px;
+    padding: 10px;
+    font-size: 18px;
     -webkit-transition: all 0.4s ease;
     -moz-transition: all 0.4s ease ;
     transition: all 0.4s ease;
@@ -83,7 +132,7 @@ header .header-content {
   }
   .navbar-default .nav > li > a,
   .navbar-default .nav > li > a:focus {
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba( 255, 255, 255, 0.7 );
   }
   .navbar-default .nav > li > a:hover,
   .navbar-default .nav > li > a:focus:hover {
@@ -91,18 +140,26 @@ header .header-content {
   }
   .navbar-default.affix {
     background-color: white;
-    border-color: rgba(34, 34, 34, 0.05);
-    min-height: 0px;
-
-  }
-
-  .navbar-default.affix .navbar-header .navbar-brand {
-    color: #F05F40;
+    border-color: rgba( 34, 34, 34, 0.05 );
+    padding: 0px;
     font-size: 14px;
   }
-  navbar-default.affix .navbar-header .navbar-brand:hover,
+  .navbar-default.affix .navbar-header .navbar-brand {
+    color: rgb( 64, 181, 239 );
+    font-size: 14px;
+  }
+  .navbar-default.affix .navbar-header .navbar-brand:hover,
   .navbar-default.affix .navbar-header .navbar-brand:focus {
-    color: #eb3812;
+    color: rgb( 18, 224, 235 );
+  }
+
+  .navbar-default.affix .nav > li > a,
+  .navbar-default.affix .nav > li > a:focus {
+    color: rgb( 34, 34, 34 );
+  }
+  .navbar-default.affix .nav > li > a:hover,
+  .navbar-default.affix .nav > li > a:focus:hover {
+    color: rgb( 64, 198, 239 );
   }
 }
 .vidBanner {
