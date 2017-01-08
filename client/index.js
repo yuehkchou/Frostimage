@@ -14,7 +14,7 @@ class App extends React.Component {
       <div>
         <Header />
         <Main />
-        <p> Hello REACT!! </p>
+        <p> Hello REACT!!</p>
       </div>
     )
   }

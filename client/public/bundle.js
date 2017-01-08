@@ -115,7 +115,7 @@
 	        _react2.default.createElement(
 	          'p',
 	          null,
-	          ' Hello REACT!! '
+	          ' Hello REACT!!'
 	        )
 	      );
 	    }
@@ -65876,26 +65876,94 @@
 	  _createClass(Main, [{
 	    key: 'render',
 	    value: function render() {
+	      var mainStyle = {
+	        backgroundImage: 'url(' + 'http://i.imgur.com/OaC1U4j.jpg' + ')'
+	      };
 	      return _react2.default.createElement(
 	        'div',
 	        { className: 'main' },
 	        _react2.default.createElement(
 	          'div',
-	          { className: 'vidBanner' },
+	          { className: 'container-fluid' },
 	          _react2.default.createElement(
-	            'video',
-	            { poster: _Banner2.default, type: 'image/jpg', id: 'backgroundvid', autoPlay: true, loop: true, muted: true },
-	            _react2.default.createElement('source', { src: _LOLBanner2.default, type: 'video/mp4' })
-	          )
-	        ),
-	        _react2.default.createElement(
-	          'div',
-	          { className: 'mainInfo' },
+	            'header',
+	            null,
+	            _react2.default.createElement(
+	              'div',
+	              { className: 'header-content' },
+	              _react2.default.createElement(
+	                'div',
+	                { className: 'header-content-inner' },
+	                _react2.default.createElement(
+	                  'h1',
+	                  { id: 'homeHeading' },
+	                  'Dot League'
+	                ),
+	                _react2.default.createElement('hr', null),
+	                _react2.default.createElement(
+	                  'p',
+	                  null,
+	                  ' Your Own Training Experience '
+	                ),
+	                _react2.default.createElement('input', { className: 'playerSearch', placeholder: 'Summoner Name...' })
+	              )
+	            ),
+	            _react2.default.createElement(
+	              'div',
+	              { className: 'vidBanner', id: 'vidPlayer' },
+	              _react2.default.createElement(
+	                'video',
+	                { controls: true, poster: _Banner2.default, id: 'backgroundvid', autoPlay: true, loop: true, muted: true },
+	                _react2.default.createElement('source', { src: '../../public/e72303f4d1abf6f055af6940e54e5e34.mp4' })
+	              )
+	            )
+	          ),
 	          _react2.default.createElement(
-	            _reactBootstrap.Col,
-	            { sm: 6, md: 3, className: 'mainInfo' },
-	            'Hello Test'
-	          )
+	            'section',
+	            { className: '.center bg-primary', id: 'about' },
+	            _react2.default.createElement(
+	              'div',
+	              { className: 'container' },
+	              _react2.default.createElement(
+	                'p',
+	                null,
+	                'Welcome to your own League of Legend Training Station!'
+	              ),
+	              _react2.default.createElement('hr', null)
+	            )
+	          ),
+	          _react2.default.createElement(
+	            'section',
+	            { id: 'guide' },
+	            _react2.default.createElement(
+	              'div',
+	              { className: 'container' },
+	              _react2.default.createElement(
+	                _reactBootstrap.Row,
+	                null,
+	                _react2.default.createElement(
+	                  _reactBootstrap.Col,
+	                  { sm: 3, md: 6, key: '{index}', 'text-center': true },
+	                  _react2.default.createElement(
+	                    'div',
+	                    { className: 'icon-box' },
+	                    _react2.default.createElement('img', { src: '{icon.img}', id: 'icons' }),
+	                    _react2.default.createElement(
+	                      'h2',
+	                      { className: 'icon-title' },
+	                      'Test'
+	                    ),
+	                    _react2.default.createElement(
+	                      'h3',
+	                      { className: 'icon-info' },
+	                      'Information'
+	                    )
+	                  )
+	                )
+	              )
+	            )
+	          ),
+	          _react2.default.createElement('div', { className: 'mainInfo' })
 	        )
 	      );
 	    }
@@ -86053,7 +86121,7 @@
 	            ),
 	            _react2.default.createElement(
 	              _reactBootstrap.NavDropdown,
-	              { eventKey: 3, title: 'Dropdown', id: 'basic-nav-dropdown' },
+	              { eventKey: 3, title: 'Champions', id: 'basic-nav-dropdown' },
 	              _react2.default.createElement(
 	                _reactBootstrap.MenuItem,
 	                { eventKey: 3.1 },
@@ -86063,7 +86131,27 @@
 	                _reactBootstrap.MenuItem,
 	                { eventKey: 3.2 },
 	                'Action 2'
+	              ),
+	              _react2.default.createElement(
+	                _reactBootstrap.MenuItem,
+	                { eventKey: 3.3 },
+	                'Action 2'
+	              ),
+	              _react2.default.createElement(
+	                _reactBootstrap.MenuItem,
+	                { eventKey: 3.4 },
+	                'Action 2'
+	              ),
+	              _react2.default.createElement(
+	                _reactBootstrap.MenuItem,
+	                { eventKey: 3.5 },
+	                'Action 2'
 	              )
+	            ),
+	            _react2.default.createElement(
+	              _reactBootstrap.NavItem,
+	              { eventKey: 4, href: '#' },
+	              'Stream'
 	            )
 	          ),
 	          _react2.default.createElement(
