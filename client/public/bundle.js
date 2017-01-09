@@ -65921,7 +65921,7 @@
 	                ),
 	                _react2.default.createElement(
 	                  'form',
-	                  { className: 'form-horizonal' },
+	                  { className: 'form-inline' },
 	                  _react2.default.createElement('input', { type: 'text', className: 'playerSearch', placeholder: 'Summoner Name...' }),
 	                  _react2.default.createElement(
 	                    'a',

@@ -31,7 +31,7 @@ class Main extends React.Component {
                 <h1 id="homeHeading">Dot League</h1>
                 <hr />
                 <p> Your Own Training Experience </p>
-                <form className="form-horizonal">
+                <form className="form-inline">
                   <input type="text" className="playerSearch" placeholder="Summoner Name..."></input>
                 {/* {formInstance} */}
                   <a href="#search" id="searchButton" className="btn btn-transparent btn-lg page-scroll">Search</a>
