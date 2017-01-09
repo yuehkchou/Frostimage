@@ -4,6 +4,16 @@
     border: 3px solid green;
     /*padding: 10px;*/
 }
+#searchButton {
+  /*padding: 14px;*/
+  background-color: transparent;
+  color: rgba( 255, 255, 255, 0.7 );
+  border-color: rgba(255, 255, 255, 0.7);
+  border-width: 3px;
+}
+#searchButton a {
+  color: rgba( 255, 255, 255, 0.7 );
+}
 .vidBanner {
   margin: auto;
   position: relative;
@@ -11,10 +21,16 @@
   /*right: 0;*/
   top:70px;
   /*bottom: 0;*/
-
 }
 .playerSearch {
+  /*padding: 12px;*/
+  font-size: 30px;
+  color: rgb(220, 220, 220);
   margin: 10px;
+  border: 0px;
+  border-radius: 5px;
+  background-color: rgba(34,34,34, 0.2);
+
 }
 #container-center {
   background-color: rgb( 34, 34, 34 )
@@ -62,6 +78,21 @@ header .header-content {
   padding: 100px 15px 100px;
   width: 100%;
 }
+header .header-content-inner h1 {
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 30px;
+}
+header .header-content-inner hr {
+  margin: 30px auto;;
+}
+header .header-content-inner p {
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 16px;
+}
 body {
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -77,13 +108,18 @@ section {
   margin: auto;
   padding: 150px;
 }
+.section-heading {
+  margin-top: auto;
+}
 
 p {
   font-size: 16px;
   line-height: 1.5;
   margin-bottom: 20px;
 }
-
+.text-faded {
+  color: rgba( 255, 255, 255, 0.7 );
+}
 .icon-box {
   max-width: 460px;
   margin: 50px auto 0;
@@ -96,10 +132,12 @@ p {
 .navbar-default {
   background-color: white;
   font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+  border-color: rgba( 30, 30, 30, 0.05 );
   -webkit-transition: all 0.4s ease;
   -moz-transition: all 0.4s ease;
   transition: all 0.4s ease;
 }
+
 .navbar-default .navbar-header .navbar-brand {
   color: rgb( 64, 181, 239 );
   font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;

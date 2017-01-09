@@ -65876,9 +65876,23 @@
 	  _createClass(Main, [{
 	    key: 'render',
 	    value: function render() {
-	      var mainStyle = {
-	        backgroundImage: 'url(' + 'http://i.imgur.com/OaC1U4j.jpg' + ')'
-	      };
+	      var formInstance = _react2.default.createElement(
+	        _reactBootstrap.Navbar,
+	        null,
+	        _react2.default.createElement(
+	          _reactBootstrap.Navbar.Collapse,
+	          null,
+	          _react2.default.createElement(
+	            _reactBootstrap.Navbar.Form,
+	            null,
+	            _react2.default.createElement(
+	              _reactBootstrap.FormGroup,
+	              null,
+	              _react2.default.createElement(_reactBootstrap.FormControl, { type: 'text', placeholder: 'Enter Summoner Name...' })
+	            )
+	          )
+	        )
+	      );
 	      return _react2.default.createElement(
 	        'div',
 	        { className: 'main' },
@@ -65905,11 +65919,15 @@
 	                  null,
 	                  ' Your Own Training Experience '
 	                ),
-	                _react2.default.createElement('input', { className: 'playerSearch', placeholder: 'Summoner Name...' }),
 	                _react2.default.createElement(
-	                  'a',
-	                  { href: '#search', className: 'btn btn-primary btn-xl page-scroll' },
-	                  'Search'
+	                  'form',
+	                  { className: 'form-horizonal' },
+	                  _react2.default.createElement('input', { type: 'text', className: 'playerSearch', placeholder: 'Summoner Name...' }),
+	                  _react2.default.createElement(
+	                    'a',
+	                    { href: '#search', id: 'searchButton', className: 'btn btn-transparent btn-lg page-scroll' },
+	                    'Search'
+	                  )
 	                )
 	              )
 	            ),
@@ -65926,16 +65944,21 @@
 	          ),
 	          _react2.default.createElement(
 	            'section',
-	            { className: '.center bg-primary', id: 'about' },
+	            { className: 'bg-primary text-center', id: 'about' },
 	            _react2.default.createElement(
 	              'div',
 	              { className: 'container' },
 	              _react2.default.createElement(
-	                'p',
-	                null,
-	                'Welcome to your own League of Legend Training Station!'
+	                'h2',
+	                { className: '.section-heading' },
+	                'Data Driven Analysis'
 	              ),
-	              _react2.default.createElement('hr', null)
+	              _react2.default.createElement('hr', null),
+	              _react2.default.createElement(
+	                'p',
+	                { className: 'text-faded' },
+	                'Welcome to your own League of Legend Training Station!'
+	              )
 	            )
 	          ),
 	          _react2.default.createElement(
@@ -65949,7 +65972,7 @@
 	                null,
 	                _react2.default.createElement(
 	                  _reactBootstrap.Col,
-	                  { sm: 3, md: 6, key: '{index}', 'text-center': true },
+	                  { sm: 3, md: 6, key: '{index}', className: 'text-center' },
 	                  _react2.default.createElement(
 	                    'div',
 	                    { className: 'icon-box' },

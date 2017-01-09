@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { Col, Row } from 'react-bootstrap';
+import { Navbar, FormGroup, FormControl, Col, Row } from 'react-bootstrap';
 import banner from '../assets/Banner.jpg';
 import vBanner from '../assets/LOLBanner.mp4';
 
@@ -11,9 +11,17 @@ class Main extends React.Component {
   }
 
   render() {
-    const mainStyle = {
-      backgroundImage: 'url(' + 'http://i.imgur.com/OaC1U4j.jpg' + ')',
-    }
+    const formInstance = (
+      <Navbar>
+        <Navbar.Collapse>
+          <Navbar.Form>
+            <FormGroup>
+              <FormControl type="text" placeholder="Enter Summoner Name..." />
+            </FormGroup>
+          </Navbar.Form>
+        </Navbar.Collapse>
+      </Navbar>
+    )
     return (
       <div className="main">
         <div className="container-fluid">
@@ -23,8 +31,11 @@ class Main extends React.Component {
                 <h1 id="homeHeading">Dot League</h1>
                 <hr />
                 <p> Your Own Training Experience </p>
-                <input className="playerSearch" placeholder="Summoner Name..."></input>
-                <a href="#search" className="btn btn-primary btn-xl page-scroll">Search</a>
+                <form className="form-horizonal">
+                  <input type="text" className="playerSearch" placeholder="Summoner Name..."></input>
+                {/* {formInstance} */}
+                  <a href="#search" id="searchButton" className="btn btn-transparent btn-lg page-scroll">Search</a>
+                </form>
               </div>
             </div>
             <div className="vidBanner" id="vidPlayer">
@@ -35,17 +46,18 @@ class Main extends React.Component {
               </video>
             </div>
           </header>
-          <section className=".center bg-primary" id="about">
+          <section className="bg-primary text-center" id="about">
           <div className="container">
-            <p>Welcome to your own League of Legend Training Station!</p>
+            <h2 className=".section-heading">Data Driven Analysis</h2>
             <hr />
+            <p className="text-faded">Welcome to your own League of Legend Training Station!</p>
           </div>
           </section>
 
           <section id="guide">
             <div className="container">
               <Row>
-                <Col sm={3} md={6} key="{index}" text-center>
+                <Col sm={3} md={6} key="{index}" className="text-center">
                   <div className="icon-box">
                     <img src="{icon.img}" id="icons" />
                     <h2 className="icon-title">Test</h2>
