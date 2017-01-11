@@ -1,0 +1,6 @@
+import express from 'express';
+const router = requrie('express').Router();
+const rank = require('./rank/rank.js');
+
+router.get('/getMaster', rank.getMaster);
+router.get('/getChallenger', rank.getChallenger);

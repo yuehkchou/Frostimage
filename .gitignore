@@ -2,6 +2,6 @@
 *.log
 dist
 node_modules
-./web/config.js
+./server/config.js
 ./components/assets/LOLBanner.mp4
 *.mp4
