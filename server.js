@@ -3,9 +3,9 @@ const express = require('express');
 const webpack = require('webpack');
 const bodyParser = require('body-parser');
 const cors = require('cors');
+const router = require('./server/router');
 
 const app = express();
-const router = express.Router();
 
 // bodyParser
 app.use(bodyParser.json());
@@ -23,9 +23,10 @@ app.get('/styles/style.css', function(req, res) {
 
 // api calls
 
-app.use('api', router)
-app.get('*', function(req, res) {
+app.get('/', function(req, res) {
   res.sendFile(path.join(__dirname, 'client/index.html'));
 });
+app.use('/api', router);
+
 
 app.listen(8888)
