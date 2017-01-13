@@ -16,7 +16,7 @@ const getMaster = ( req, res, next ) => {
       res.send( JSON.parse( body ) )
       next();
     } else {
-      console.log( error )
+      res.send( error );
     }
   } )
 }
@@ -30,6 +30,8 @@ const getChallenger = ( req, res, next ) => {
     if( !error && response.statusCode == 200 ){
       res.send( JSON.parse( body ) )
       next();
+    } else {
+      res.send( error );
     }
   } )
 }
